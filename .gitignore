@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+ENV/
+env/
+
+# PyInstaller
+build/
+dist/
+*.spec
+*.exe
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Output/temp files
+tabs_out.txt
+*.log
