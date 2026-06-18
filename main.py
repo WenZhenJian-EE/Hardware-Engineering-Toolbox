@@ -29,6 +29,7 @@ from PyQt5.QtWidgets import (
     QApplication,
     QGraphicsDropShadowEffect,
     QGridLayout,
+    QHBoxLayout,
     QLabel,
     QMainWindow,
     QMessageBox,
@@ -85,7 +86,7 @@ ORDER_WEIGHTS = {
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Hardware Engineering Toolbox (Pro v10.4 Modular) - By: sakana (2260799319@qq.com)")
+        self.setWindowTitle("Hardware Engineering Toolbox (Pro v10.4 Modular) - By: WenZhenJian-EE")
         self.setGeometry(100, 100, 1350, 950)
         self.child_windows = {}
         self.window_mapping = get_all_modules()
@@ -104,6 +105,107 @@ class MainWindow(QMainWindow):
         main_layout = QVBoxLayout(content_widget)
         main_layout.setContentsMargins(15, 15, 15, 15)
         main_layout.setSpacing(10)
+
+        # Header Banner Panel
+        header_widget = QWidget()
+        header_widget.setObjectName("HeaderWidget")
+        header_widget.setStyleSheet("""
+            QWidget#HeaderWidget {
+                background-color: #ffffff;
+                border: 1px solid #e1e8ed;
+                border-radius: 8px;
+            }
+        """)
+        header_layout = QHBoxLayout(header_widget)
+        header_layout.setContentsMargins(15, 12, 15, 12)
+        
+        # Left side: Title and Subtitle
+        title_layout = QVBoxLayout()
+        app_title = QLabel("Hardware Engineering Toolbox")
+        app_title.setStyleSheet("font-size: 20px; font-weight: bold; color: #2c3e50;")
+        app_desc = QLabel("硬件工程助手 Pro v10.4 (动态模块化架构)")
+        app_desc.setStyleSheet("font-size: 12px; color: #7f8c8d; margin-top: 2px;")
+        title_layout.addWidget(app_title)
+        title_layout.addWidget(app_desc)
+        header_layout.addLayout(title_layout)
+        
+        header_layout.addStretch()
+        
+        # Right side: Author & Links Card
+        info_layout = QVBoxLayout()
+        info_layout.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+        info_layout.setSpacing(6)
+        
+        author_lbl = QLabel('作者: <b>WenZhenJian-EE</b>')
+        author_lbl.setStyleSheet("font-size: 12px; color: #34495e;")
+        
+        links_layout = QHBoxLayout()
+        links_layout.setSpacing(10)
+        
+        # GitHub Repo Link
+        repo_link = QLabel('<a href="https://github.com/WenZhenJian-EE/Hardware-Engineering-Toolbox" style="color: #3498db; text-decoration: none;">📂 GitHub 仓库</a>')
+        repo_link.setOpenExternalLinks(True)
+        repo_link.setTextInteractionFlags(Qt.LinksAccessibleByMouse | Qt.TextSelectableByMouse)
+        repo_link.setStyleSheet("font-size: 11px;")
+        
+        # GitHub Profile Link
+        profile_link = QLabel('<a href="https://github.com/WenZhenJian-EE" style="color: #3498db; text-decoration: none;">👤 个人主页</a>')
+        profile_link.setOpenExternalLinks(True)
+        profile_link.setTextInteractionFlags(Qt.LinksAccessibleByMouse | Qt.TextSelectableByMouse)
+        profile_link.setStyleSheet("font-size: 11px;")
+        
+        # Blog Link
+        blog_link = QLabel('<a href="https://wenzhenjian-ee.github.io/" style="color: #3498db; text-decoration: none;">🌐 个人博客</a>')
+        blog_link.setOpenExternalLinks(True)
+        blog_link.setTextInteractionFlags(Qt.LinksAccessibleByMouse | Qt.TextSelectableByMouse)
+        blog_link.setStyleSheet("font-size: 11px;")
+        
+        links_layout.addWidget(repo_link)
+        links_layout.addWidget(profile_link)
+        links_layout.addWidget(blog_link)
+        
+        # Copy link button
+        copy_btn = QPushButton("复制项目地址")
+        copy_btn.setCursor(Qt.PointingHandCursor)
+        copy_btn.setStyleSheet("""
+            QPushButton {
+                background-color: #3498db;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                padding: 4px 8px;
+                font-size: 11px;
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                background-color: #2980b9;
+            }
+            QPushButton:pressed {
+                background-color: #1f618d;
+            }
+        """)
+        
+        def copy_to_clipboard():
+            clipboard = QApplication.clipboard()
+            clipboard.setText("https://github.com/WenZhenJian-EE/Hardware-Engineering-Toolbox")
+            QMessageBox.information(self, "复制成功", "项目地址已复制到剪贴板！")
+            
+        copy_btn.clicked.connect(copy_to_clipboard)
+        
+        info_layout.addWidget(author_lbl, 0, Qt.AlignRight)
+        info_layout.addLayout(links_layout)
+        info_layout.addWidget(copy_btn, 0, Qt.AlignRight)
+        
+        header_layout.addLayout(info_layout)
+        
+        # Add drop shadow to the header panel
+        shadow = QGraphicsDropShadowEffect()
+        shadow.setBlurRadius(8)
+        shadow.setColor(QColor(0, 0, 0, 15))
+        shadow.setOffset(0, 2)
+        header_widget.setGraphicsEffect(shadow)
+        
+        main_layout.addWidget(header_widget)
 
         categories = {}
         for win_id, win_cls in self.window_mapping.items():

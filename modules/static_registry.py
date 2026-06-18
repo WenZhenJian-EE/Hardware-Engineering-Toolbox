@@ -25,7 +25,6 @@ from modules.power.power_dclink_ripple import DcLinkRippleWindow
 from modules.power.power_device_driver import SwitchDeviceWindow
 from modules.power.power_device_dpt import DoublePulseTestWindow
 from modules.power.power_ldo_thermal import LdoThermalWindow
-from modules.power.power_relay_driver import RelayDriverWindow
 from modules.power.power_snubber_clamp import RcSnubberWindow
 from modules.magnetics.power_topology_llc_pfc import AdvancedTopologiesWindow
 from modules.control.power_load_transient import LoadTransientWindow
@@ -63,7 +62,6 @@ REGISTRY = {
     'power_device': SwitchDeviceWindow,
     'power_dpt': DoublePulseTestWindow,
     'power_ldo_th': LdoThermalWindow,
-    'power_relay': RelayDriverWindow,
     'power_snubber': RcSnubberWindow,
     'power_topology': AdvancedTopologiesWindow,
     'power_transient': LoadTransientWindow,
