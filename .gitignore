@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# PyInstaller build files
+build/
+Circuit_Calculator_Pro.spec
+
+# Local configuration files
+app_config.json
+cmd_buttons.json
+tabs_out.txt
+
+# PyInstaller output executables (optional, uncomment to track)
+dist/
