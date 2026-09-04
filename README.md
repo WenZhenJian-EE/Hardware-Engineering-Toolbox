@@ -78,27 +78,26 @@ The application includes 30 dedicated design workstations organized into five ca
 
 ## Technical Stack & Architecture
 
-```mermaid
-graph TD
-    subgraph Client["Desktop Shell (Electron + React 19 + TypeScript)"]
-        UI["Dark UI Workspace (App.tsx)"]
-        Canvas["Interactive Schematic Canvases"]
-        Charts["ECharts Dynamic Waveforms & Bode Plots"]
-        Deck["DragDeck Multi-Column Responsive Layout"]
-        UI --> Canvas
-        UI --> Charts
-        UI --> Deck
-    end
-
-    subgraph Server["Computation Engine (FastAPI + Python 3.11)"]
-        API["FastAPI REST Endpoints (app.py)"]
-        Solvers["Analytical Physics Solvers (formula.py)"]
-        DB["SQLite Component Database (database.py)"]
-        API --> Solvers
-        API --> DB
-    end
-
-    Client <-->|"Local HTTP REST API (Dynamic Port)"| Server
+```text
++-------------------------------------------------------------------------+
+|           Desktop Client (Electron 30 + React 19 + TypeScript)          |
+|                                                                         |
+|  +-----------------------+  +--------------------+  +----------------+  |
+|  |   Interactive EDA     |  |    Neon ECharts    |  |    DragDeck    |  |
+|  |   Schematic Canvases  |  | Waveforms & Bode   |  |  Multi-Column  |  |
+|  +-----------------------+  +--------------------+  +----------------+  |
++-------------------------------------------------------------------------+
+                                   | ^
+       Local HTTP REST API         | | JSON Request / Response
+       (Dynamic Port Binding)      v |
++-------------------------------------------------------------------------+
+|             Backend Engine (FastAPI + Python 3.11 + SQLite)             |
+|                                                                         |
+|  +-----------------------+  +--------------------+  +----------------+  |
+|  |  Analytical Physics   |  | Transient Thermal  |  |   Component    |  |
+|  |  (Dowell / iGSE / AP) |  | (Foster RC Network)|  | SQLite Database|  |
+|  +-----------------------+  +--------------------+  +----------------+  |
++-------------------------------------------------------------------------+
 ```
 
 - **Frontend**: React 19, TypeScript, TailwindCSS, ECharts, KaTeX (LaTeX math rendering), Lucide Icons.
