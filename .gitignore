@@ -58,3 +58,4 @@ Thumbs.db
 *_merged.*
 *_reconstructed.*
 .superpowers/
+.agents/
