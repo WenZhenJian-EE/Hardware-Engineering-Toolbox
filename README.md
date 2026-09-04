@@ -171,5 +171,5 @@ This project is licensed under the [MIT License](LICENSE).
 ## Author & Contact
 
 - **Author**: [WenZhenJian-EE](https://github.com/WenZhenJian-EE)
-- **Repository**: [https://github.com/WenZhenJian-EE/Hardware-Engineering-Toolbox](https://github.com/WenZhenJian-EE/Hardware-Engineering-Toolbox)
+- **Repository**: [https://github.com/WenZhenJian-EE/Hardware-Engineering-Toolbox-Desktop](https://github.com/WenZhenJian-EE/Hardware-Engineering-Toolbox-Desktop)
 - **Feedback & Contributions**: Issues and pull requests are welcome. If you are interested in continuing development, feel free to fork the repository.

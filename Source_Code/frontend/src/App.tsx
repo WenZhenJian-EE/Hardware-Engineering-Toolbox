@@ -1256,7 +1256,7 @@ export default function App() {
             <span>{t('app.author')}</span>
           </div>
           <a 
-            href="https://github.com/WenZhenJian-EE/Hardware-Engineering-Toolbox" 
+            href="https://github.com/WenZhenJian-EE/Hardware-Engineering-Toolbox-Desktop" 
             target="_blank" 
             rel="noreferrer"
             className="text-[10px] text-slate-400 hover:text-cyan-400 flex items-center gap-1.5 mt-1 border-0"

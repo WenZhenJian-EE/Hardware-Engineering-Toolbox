@@ -32,7 +32,7 @@ Whether you are fixing an equation, refining a UI layout, or adding a new featur
 ### Quick Start
 1. Clone the repository:
    ```bash
-   git clone https://github.com/WenZhenJian-EE/Hardware-Engineering-Toolbox.git
+   git clone https://github.com/WenZhenJian-EE/Hardware-Engineering-Toolbox-Desktop.git
    cd Hardware-Engineering-Toolbox
    ```
 2. Double-click `start_dev.bat` on Windows, or start services manually:
