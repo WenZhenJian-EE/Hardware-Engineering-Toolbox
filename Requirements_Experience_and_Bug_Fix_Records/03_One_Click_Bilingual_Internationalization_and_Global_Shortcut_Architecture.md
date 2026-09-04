@@ -55,19 +55,13 @@ const [lang, setLangState] = useState<Language>(() => {
 ### 2.2 Bidirectional Category Mapping
 To guarantee that custom user categories and built-in engineering disciplines map seamlessly between languages, a bidirectional dictionary was implemented:
 ```typescript
-const CATEGORY_MAP: Record<string, { zh: string; en: string }> = {
-  '全部': { zh: '全部', en: 'All' },
-  'All': { zh: '全部', en: 'All' },
-  '⚡ 协同电源设计 (Co-Design)': { zh: '⚡ 协同电源设计 (Co-Design)', en: '⚡ Power Co-Design' },
-  '⚡ Power Co-Design': { zh: '⚡ 协同电源设计 (Co-Design)', en: '⚡ Power Co-Design' },
-  '🧲 磁件与拓扑基础': { zh: '🧲 磁件与拓扑基础', en: '🧲 Magnetics & Basics' },
-  '🧲 Magnetics & Basics': { zh: '🧲 磁件与拓扑基础', en: '🧲 Magnetics & Basics' },
-  '🔥 功率器件与热力': { zh: '🔥 功率器件与热力', en: '🔥 Power & Thermal' },
-  '🔥 Power & Thermal': { zh: '🔥 功率器件与热力', en: '🔥 Power & Thermal' },
-  '📈 环路控制与信号': { zh: '📈 环路控制与信号', en: '📈 Loop & Signals' },
-  '📈 Loop & Signals': { zh: '📈 环路控制与信号', en: '📈 Loop & Signals' },
-  '🛡️ 无源元器件与安规': { zh: '🛡️ 无源元器件与安规', en: '🛡️ Passives & Safety' },
-  '🛡️ Passives & Safety': { zh: '🛡️ 无源元器件与安规', en: '🛡️ Passives & Safety' }
+const CATEGORY_MAP: Record<string, { primary: string; en: string }> = {
+  'All': { primary: 'All', en: 'All' },
+  '⚡ Power Co-Design': { primary: '⚡ Power Co-Design', en: '⚡ Power Co-Design' },
+  '🧲 Magnetics & Basics': { primary: '🧲 Magnetics & Basics', en: '🧲 Magnetics & Basics' },
+  '🔥 Power & Thermal': { primary: '🔥 Power & Thermal', en: '🔥 Power & Thermal' },
+  '📈 Loop & Signals': { primary: '📈 Loop & Signals', en: '📈 Loop & Signals' },
+  '🛡️ Passives & Safety': { primary: '🛡️ Passives & Safety', en: '🛡️ Passives & Safety' }
 };
 ```
 
@@ -90,8 +84,8 @@ if (e.altKey && (e.key === 'l' || e.key === 'L')) {
 Engineers can toggle languages instantly from anywhere in the application within 100ms.
 
 ### 3.2 Visual Control Points
-1. **Sidebar Brand Header**: A prominent cyan pill button next to `HW ToolBox Desktop v1.0` displays `[EN]` (when in Chinese) and `[中文]` (when in English).
-2. **Global Header Bar**: Inside any workstation panel, a top-right button displays `[🌐 EN / 中文]` with shortcut tooltips.
+1. **Sidebar Brand Header**: A prominent cyan pill button next to `HW ToolBox Desktop v1.0` displays `[EN]` to toggle between locale modes.
+2. **Global Header Bar**: Inside any workstation panel, a top-right button displays `[🌐 Language Toggle]` with shortcut tooltips.
 3. **Main Dashboard Toolbar**: Positioned directly beside the module search bar.
 
 ---

@@ -71,11 +71,11 @@ def start_stdin_monitor():
 
 All 40 modules are categorized into 5 standardized hardware engineering domains:
 
-### Category 1: ⚡ Power Co-Design (`⚡ 协同电源设计 (Co-Design)`)
+### Category 1: ⚡ Power Co-Design
 - **`buck` (Buck Synchronous Converter)**: Steady-state CCM/DCM analysis, output filter ripple stress, dynamic closed-loop Bode sweep, interactive schematic sandbox, and 20-item secondary verification hub.
 - **`flyback` (Flyback Isolated Converter)**: AP-method core sizing, secondary synchronous rectifier conduction/reverse recovery losses, primary RCD clamp dissipation, closed-loop optocoupler-TL431 feedback, and secondary verification hub.
 
-### Category 2: 🧲 Magnetics & Basics (`🧲 磁件与拓扑基础`)
+### Category 2: 🧲 Magnetics & Basics
 - **`mag_inductor`**: Inductor core, air gap, Dowell high-frequency winding AC resistance factor $F_r$, and DC-bias soft saturation.
 - **`mag_transformer`**: Integrated transformer sizing, AP method, leakage inductance estimation, and multi-winding interleaved window configurations.
 - **`mag_core_loss`**: Core volumetric loss based on the Improved Generalized Steinmetz Equation (iGSE) under arbitrary non-sinusoidal waveforms.
@@ -83,7 +83,7 @@ All 40 modules are categorized into 5 standardized hardware engineering domains:
 - **`power_dclink`**: Interleaved DC-DC and 3-Phase SPWM/SVPWM inverter bus capacitor RMS ripple stress, thermal dissipation, and electrolytic capacitor Arrhenius operating lifetime.
 - **`power_ac_3ph`**: 3-Phase Y-Delta impedance transformation, Clarke/Park ($\alpha\beta$ / $dq$) projections, and phase-locked loop (PLL) filter parameters.
 
-### Category 3: 🔥 Power & Thermal (`🔥 功率器件与热力`)
+### Category 3: 🔥 Power & Thermal
 - **`power_foster_thermal`**: High-order Foster RC thermal network state-space transient junction temperature prediction.
 - **`gate_drive_miller`**: SiC/GaN gate $dv/dt$ parasitic Miller turn-on threshold verification, dead-time dissipation, and ZVS criteria.
 - **`heatsink`**: Natural and forced convection thermal resistance modeling, fin geometry fluid dynamics Reynolds calculation.
@@ -94,7 +94,7 @@ All 40 modules are categorized into 5 standardized hardware engineering domains:
 - **`battery_pack`**: Lithium-ion series-parallel sizing, passive balancing shunt resistor sizing, and thermal rise estimation.
 - **`power_budget`**: Converter-level multi-subsystem loss breakdown and full-load efficiency profiling.
 
-### Category 4: 📈 Loop & Signals (`📈 环路控制与信号`)
+### Category 4: 📈 Loop & Signals
 - **`power_waveform_rms`**: Analytical RMS, average, and harmonic distortion for non-sinusoidal waveforms (trapezoidal, phase-fired sine, triangular).
 - **`loop_compensation`**: Type II / Type III compensator design, pole-zero placement, crossover frequency optimization, and phase margin targeting.
 - **`digital_pid`**: S-domain to Z-domain discretization (Tustin/Bilinear), Butterworth digital filter synthesis, and PID difference equations.
@@ -109,7 +109,7 @@ All 40 modules are categorized into 5 standardized hardware engineering domains:
 - **`interface_level_shift`**: $I^2C$ bus pull-up sizing, RS-485 / CAN bus termination characteristic impedance matching.
 - **`comm_powercomm`**: SCI serial bit-field parser, Modbus RTU frame generator, CRC-16 calculation, and IEEE 754 floating-point encoder/decoder.
 
-### Category 5: 🛡️ Passives & Safety (`🛡️ 无源元器件与安规`)
+### Category 5: 🛡️ Passives & Safety
 - **`creepage`**: IEC 60664-1 & IEC 62368 insulation coordination, clearance/creepage distance sizing with altitude barometric correction factors.
 - **`tvs_zener`**: Zener power dissipation and TVS transient pulse clamp peak power and junction temperature margin.
 - **`input_protection`**: Inrush surge limiting NTC sizing, fuse $I^2t$ let-through energy rating, and X-capacitor safety discharge resistors.

@@ -52,9 +52,9 @@ graph TD
 
 #### 1. Domain Terminology Dictionary (`autoTranslateDict.ts`)
 A centralized dictionary containing hundreds of standardized power electronics phrases, magnetics parameters, and UI actions:
-- **Magnetics**: `高频集成变压器设计` -> `High-Frequency Integrated Transformer Design`, `磁芯估算(AP)` -> `Core Sizing (AP)`, `绕组阻抗Fr` -> `AC Resistance Factor Fr`, `原边漏感` -> `Primary Leakage Inductance`, `SteinMetz拟合` -> `Steinmetz Parameter Fitting`.
-- **Power Converters**: `判断拓扑类型 (K 经验)` -> `Topology Selection (Factor K)`, `正激模式` -> `Forward Mode`, `隔离反激` -> `Isolated Flyback`, `LLC 集成` -> `LLC Integrated`.
-- **UI Sections**: `输入设计需求` -> `Design Specifications`, `磁芯选型推荐` -> `Core Selection Recommendations`, `AP法估算公式` -> `AP Method Sizing Formula`.
+- **Magnetics Terms**: Mapped domain terminology such as high-frequency integrated transformer design, core sizing (AP method), AC winding resistance factor ($F_r$), primary leakage inductance, and Steinmetz parameter fitting.
+- **Power Converters**: Mapped topology selection rules (Factor $K$), forward mode, isolated flyback, and integrated LLC.
+- **UI Sections**: Mapped user interface headers such as Design Specifications, Core Selection Recommendations, and AP Method Sizing Formula.
 
 #### 2. DOM Tree Mutation Hook (`useAutoTranslator.ts`)
 ```typescript
@@ -145,6 +145,6 @@ export function useAutoTranslator(
 ## 4. Key Advantages & Verification
 
 1. **Zero Component Intrusion**: Not a single line of mathematical or rendering logic was changed inside the 40 calculation panels.
-2. **Instant Bilingual Toggling**: Pressing `Alt + L` or clicking `🌐 中文 / EN` translates all tabs, subtitles, dropdown choices, and recommendation badges in < 1 millisecond.
+2. **Instant Bilingual Toggling**: Pressing `Alt + L` or clicking the language toggle translates all tabs, subtitles, dropdown choices, and recommendation badges in < 1 millisecond.
 3. **Absolute Numeric & Formula Safety**: User inputs (e.g. `100 W`, `4.5 A/mm²`, `0.2 T`) and KaTeX math ($A_p = A_e \cdot A_w$) are protected by element guards.
 4. **Packaged Binary Delivery**: Verified inside `Hardware_Engineering_Toolbox.exe` (96 MB standalone binary).

@@ -5,8 +5,8 @@
 ## 1. Problem Statement & User Feedback
 
 During system validation prior to open-source release, user testing revealed an unexpected phenomenon:
-- Despite code refactoring in git commit `06153eb` that removed unmaintained topology panels, the running desktop client continued to display **20 obsolete topologies** under an outdated category titled `"⚡ 协同 DCDC (非隔离)"` and `"一键协同设计流"` (such as Vienna PFC, Totem-Pole PFC, DAB & CLLC, Inverting Buck-Boost, etc.).
-- The sidebar also displayed empty categories labeled `[占位]` (Placeholders).
+- Despite code refactoring in git commit `06153eb` that removed unmaintained topology panels, the running desktop client continued to display **20 obsolete topologies** under an outdated legacy category titled `"⚡ Co-Design DCDC (Non-Isolated)"` and `"One-Click Co-Design Flow"` (such as Vienna PFC, Totem-Pole PFC, DAB & CLLC, Inverting Buck-Boost, etc.).
+- The sidebar also displayed empty categories labeled `[Placeholder]`.
 - Clicking on these legacy items resulted in blank screens or unhandled routing exceptions.
 
 ---
@@ -60,9 +60,9 @@ const [customGroups, setCustomGroups] = useState<ToolGroup[]>(() => {
       if (Array.isArray(parsed) && parsed.length > 0) {
         // Step 1: Detect legacy category names from deprecated branches
         const hasLegacyCategories = parsed.some(g => 
-          g.name.includes('一键协同') || 
-          g.name.includes('非隔离') || 
-          g.name.includes('协同 DCDC')
+          g.name.includes('Co-Design Flow') || 
+          g.name.includes('Non-Isolated') || 
+          g.name.includes('Co-Design DCDC')
         );
 
         if (hasLegacyCategories) {
@@ -92,7 +92,7 @@ In the sidebar navigation renderer (`App.tsx`), an explicit guard was added to p
 
 ```typescript
 {customGroups.map(group => {
-  const isPlaceholder = group.name.includes('[占位]') || group.name.includes('[Spacer]');
+  const isPlaceholder = group.name.includes('[Placeholder]') || group.name.includes('[Spacer]');
   const groupModules = group.moduleIds
     .map(id => TOOL_MODULES.find(m => m.id === id))
     .filter(Boolean) as ToolModule[];

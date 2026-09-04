@@ -6,7 +6,7 @@
 
 During real-time browser inspection of **DC-Link Capacitor Ripple & Lifetime Analysis (`power_dclink`)**:
 - **Tab 1 (Interleaved DC-DC)** functioned properly.
-- **Tab 2 (3-Phase Inverter DC-Link Stress)** exhibited a critical failure: clicking "Calculate" resulted in a **completely blank right-hand results deck** (`2. 母线电容应力解析计算结果`).
+- **Tab 2 (3-Phase Inverter DC-Link Stress)** exhibited a critical failure: clicking "Calculate" resulted in a **completely blank right-hand results deck** (`2. DC-Link Capacitor Stress Analytical Calculation Results`).
 - No feedback was provided to the user, giving the impression of an unhandled frontend freeze.
 
 ---

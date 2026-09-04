@@ -16,11 +16,11 @@ Double-clicking the `.exe` did not open a visible window, and the process appear
 By extracting the packaged runtime environment and executing the binary with `--enable-logging` and stdout/stderr redirection, the exact execution trace was captured:
 
 ```
-正在拉起 Python FastAPI 后端 (端口: 8000)...
-[打包模式] 正在从资源路径拉起后端: resources\backend\backend.exe
-[打包模式] 不需要拉起 Vite 前端开发服务器，将直接加载静态文件。
-正在等待端口就绪 (后端端口: 8000)...
-Python 后端进程退出，退出码: 1
+Spawning Python FastAPI backend (Port: 8000)...
+[Packaged Mode] Spawning backend from resource path: resources\backend\backend.exe
+[Packaged Mode] Vite dev server not required; serving static production bundles directly.
+Waiting for backend port readiness (Target Port: 8000)...
+Python backend process exited with exit code: 1
 [Python Backend Error]: Traceback (most recent call last):
   File "app.py", line 10, in <module>
 ModuleNotFoundError: No module named 'backend'
@@ -42,7 +42,7 @@ if (isPackaged) {
     if (backendReady) {
       createWindow(); // Window is ONLY created if backend succeeds!
     } else {
-      console.error('FastAPI 后端启动超时！');
+      console.error('FastAPI backend startup timeout!');
       // No window was created! App hung invisibly in background!
     }
   });
