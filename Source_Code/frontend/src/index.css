@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* DEDS Theme Design Tokens */
+  --color-primary: #0ea5e9;
+  --color-primary-hover: #38bdf8;
+  --color-primary-glow: rgba(14, 165, 233, 0.15);
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #f43f5e;
+  --color-surface: rgba(15, 23, 42, 0.35);
+  --color-border: rgba(51, 65, 85, 0.45);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Roboto Mono', 'JetBrains Mono', ui-monospace, monospace;
+
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0b0f19;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 0%, #151e33 0%, #080b13 70%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.8), 0 0 15px rgba(52, 152, 219, 0.1);
+}
+
+/* Input Fields styling */
+.neon-input {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.neon-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+  background: rgba(15, 23, 42, 0.8);
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Text glow utilities */
+.glow-text-cyan {
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+}
+
+/* KaTeX Formula Dark Theme Compatibility */
+.katex,
+.katex-display {
+  color: inherit !important;
+}
+
+/* DEDS v2 Universal VSCode Input & Select Reset */
+input[type="number"],
+input[type="text"],
+input:not([type]),
+select {
+  color: #22d3ee !important; /* text-cyan-400 */
+  font-family: var(--font-mono) !important;
+  font-weight: 500;
+}
+
+input::placeholder {
+  color: #64748b !important;
+}
+
+/* Ensure focus highlights match Cyan */
+input:focus,
+select:focus {
+  border-color: rgba(6, 182, 212, 0.6) !important;
+  box-shadow: 0 0 8px rgba(6, 182, 212, 0.25) !important;
+}
+
+/* Enforce zero latency for tabs and layout decks */
+.rt-tabs-content, [data-state], .tab-content-no-anim, .DragDeck, .DragCard {
+  transition: none !important;
+  animation: none !important;
+}
+

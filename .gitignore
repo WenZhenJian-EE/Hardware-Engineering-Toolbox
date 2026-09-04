@@ -1,17 +1,60 @@
-# Python cache
+# Python & Pytest
 __pycache__/
 *.py[cod]
-*$py.class
+*.class
+*.so
 .pytest_cache/
-
-# PyInstaller build files
+.coverage
+htmlcov/
 build/
-Circuit_Calculator_Pro.spec
+*.log
+backend_daemon.log
+backend_debug.log
 
-# Local configuration files
-app_config.json
-cmd_buttons.json
-tabs_out.txt
-
-# PyInstaller output executables (optional, uncomment to track)
+# Node & Frontend
+node_modules/
 dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+tsc_errors*
+style_baseline_report.md
+
+# Build Executables & Binaries (Distribute via GitHub Releases)
+*.exe
+*.dll
+*.dmg
+*.pkg
+*.app
+*.deb
+*.rpm
+*.zip
+*.tar.gz
+Circuit_Calculator_Pro.exe
+
+# IDE & Editor files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Temporary & Backup files
+*.bak
+*.tmp
+*.orig
+*.restored
+*.write_restored
+*current_bak
+*_merged.*
+*_reconstructed.*
+.superpowers/

@@ -1,0 +1,58 @@
+{
+    "IPP60R180P7": {
+        "type": "MOSFET",
+        "v_ds_max": 650.0,
+        "i_d_max": 18.0,
+        "r_ds_on": 0.18,
+        "package": "TO-220",
+        "r_jc": 1.2
+    },
+    "IPW60R041P6": {
+        "type": "MOSFET",
+        "v_ds_max": 600.0,
+        "i_d_max": 77.0,
+        "r_ds_on": 0.041,
+        "package": "TO-247",
+        "r_jc": 0.35
+    },
+    "BSC0902NS": {
+        "type": "MOSFET",
+        "v_ds_max": 30.0,
+        "i_d_max": 100.0,
+        "r_ds_on": 0.0026,
+        "package": "SuperSO8",
+        "r_jc": 1.5
+    },
+    "IRFB3077": {
+        "type": "MOSFET",
+        "v_ds_max": 75.0,
+        "i_d_max": 120.0,
+        "r_ds_on": 0.0033,
+        "package": "TO-220",
+        "r_jc": 0.4
+    },
+    "C3M0075120D": {
+        "type": "SiC MOSFET",
+        "v_ds_max": 1200.0,
+        "i_d_max": 30.0,
+        "r_ds_on": 0.075,
+        "package": "TO-247",
+        "r_jc": 0.7
+    },
+    "C2M0080120D": {
+        "type": "SiC MOSFET",
+        "v_ds_max": 1200.0,
+        "i_d_max": 36.0,
+        "r_ds_on": 0.08,
+        "package": "TO-247",
+        "r_jc": 0.65
+    },
+    "SCT3022AL": {
+        "type": "SiC MOSFET",
+        "v_ds_max": 650.0,
+        "i_d_max": 93.0,
+        "r_ds_on": 0.022,
+        "package": "TO-247",
+        "r_jc": 0.44
+    }
+}

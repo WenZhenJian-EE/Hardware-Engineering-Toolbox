@@ -1,0 +1,41 @@
+{
+  "name": "hardware-engineering-toolbox-desktop",
+  "version": "1.0.0",
+  "description": "Hardware Engineering Toolbox - Desktop Hybrid App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "dist": "electron-builder",
+    "build:fast": "python parallel_build.py",
+    "test:fast": "python -m pytest -n auto"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.hardware.engineering.toolbox",
+    "productName": "Hardware Engineering Toolbox",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json",
+      "frontend/dist/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "backend/dist/backend",
+        "to": "backend"
+      }
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ]
+    }
+  }
+}
